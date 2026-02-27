@@ -3,3 +3,5 @@ langchain-openai
 langchain-community
 langgraph
 python-dotenv
+chainlit
+requests

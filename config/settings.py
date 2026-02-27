@@ -23,3 +23,12 @@ def validate_google_key() -> bool:
         print("Create a .env file and add the entry: GOOGLE_API_KEY=your-key-here")
         return False
     return True
+
+
+def validate_weather_key() -> bool:
+    """Sprawdza obecność klucza WEATHER_API_KEY. Zwraca True jeśli jest dostępny."""
+    if not os.getenv("WEATHER_API_KEY"):
+        print("Błąd: Brak klucza WEATHER_API_KEY w zmiennych środowiskowych.")
+        print("Utwórz plik .env i dodaj wpis: WEATHER_API_KEY=twoj-klucz-tutaj (z OpenWeatherMap)")
+        return False
+    return True

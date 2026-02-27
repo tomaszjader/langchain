@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 
 from config import load_config, validate_openai_key
-from tools import get_current_time, calculator
+from tools import get_current_time, calculator, get_weather
 
 
 def run_langchain_agent():
@@ -16,7 +16,7 @@ def run_langchain_agent():
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
     # Lista dostępnych narzędzi
-    tools = [get_current_time, calculator]
+    tools = [get_current_time, calculator, get_weather]
 
     # Tworzenie agenta (LangChain 1.0 / LangGraph)
     agent = create_react_agent(
